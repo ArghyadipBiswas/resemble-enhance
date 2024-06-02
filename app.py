@@ -5,7 +5,7 @@ import torchaudio
 from resemble_enhance.enhancer.inference import denoise, enhance
 
 if torch.cuda.is_available():
-    device = "cuda"
+    device = "cpu"
 else:
     device = "cpu"
 
@@ -52,7 +52,9 @@ def main():
         outputs=outputs,
     )
 
-    interface.launch()
+    interface.launch(
+        share="True"
+    )
 
 
 if __name__ == "__main__":
