@@ -5,7 +5,7 @@ import torchaudio
 from resemble_enhance.enhancer.inference import denoise, enhance
 
 if torch.cuda.is_available():
-    device = "cpu"
+    device = "cuda"
 else:
     device = "cpu"
 
